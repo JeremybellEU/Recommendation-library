@@ -11,3 +11,4 @@ data/submission/
 *.synctex.gz
 *.pdf
 .checkstyle
+!target/*.jar
