@@ -1,0 +1,13 @@
+*.idea
+*.iml
+*.class
+data/submission/
+.classpath
+.project
+/bin/
+/target/
+.settings/
+*.aux
+*.synctex.gz
+*.pdf
+.checkstyle
