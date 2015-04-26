@@ -11,6 +11,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
+
+        <distributionManagement>
+                <repository>
+                        <id>devhub</id>
+                        <url>https://devhub.ewi.tudelft.nl/nexus/content/repositories/releases/</url>
+                </repository>
+        </distributionManagement>
+
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		<plugins>
@@ -18,8 +26,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.1</version>
 				<configuration>
-					<source />
-					<target />
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
