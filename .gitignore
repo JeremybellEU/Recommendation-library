@@ -12,3 +12,5 @@ data/submission/
 *.pdf
 .checkstyle
 !target/*.jar
+pom.xml.versionsBackup
+
