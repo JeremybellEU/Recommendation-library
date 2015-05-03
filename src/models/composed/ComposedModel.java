@@ -3,7 +3,7 @@ package models.composed;
 import java.util.List;
 
 import models.DataMapModel;
-import predictors.Predictor;
+import predictors.TrainingPredictor;
 import datastructures.dataholders.Data;
 import datastructures.input.DataMap;
 
@@ -22,7 +22,7 @@ public abstract class ComposedModel<F extends Data<F>, V> implements
 	/**
 	 * The predictors that will be trained.
 	 */
-	private final List<Predictor<F, V>> predictors;
+	private final List<TrainingPredictor<F, V>> predictors;
 
 	/**
 	 * Create a composed model using the list of predictors.
@@ -30,14 +30,14 @@ public abstract class ComposedModel<F extends Data<F>, V> implements
 	 * @param _predictors
 	 *            The predictors for this composedModel.
 	 */
-	public ComposedModel(final List<Predictor<F, V>> _predictors) {
+	public ComposedModel(final List<TrainingPredictor<F, V>> _predictors) {
 		this.predictors = _predictors;
 	}
 
 	@Override
 	public final void train(final DataMap<F> input, final DataMap<V> output) {
 		for (Integer i = input.firstKey(); i != null; i = input.higherKey(i)) {
-			for (final Predictor<F, V> p : this.predictors) {
+			for (final TrainingPredictor<F, V> p : this.predictors) {
 				p.train(input.get(i), output.get(i));
 			}
 		}
@@ -48,13 +48,13 @@ public abstract class ComposedModel<F extends Data<F>, V> implements
 	 *
 	 * @return {@link #predictors}.
 	 */
-	public final List<Predictor<F, V>> getPredictors() {
+	public final List<TrainingPredictor<F, V>> getPredictors() {
 		return this.predictors;
 	}
 
 	@Override
 	public final void reset() {
-		for (final Predictor<?, ?> p : this.getPredictors()) {
+		for (final TrainingPredictor<?, ?> p : this.getPredictors()) {
 			p.reset();
 		}
 	}
