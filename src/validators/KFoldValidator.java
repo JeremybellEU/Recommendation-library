@@ -1,6 +1,6 @@
 package validators;
 
-import models.Model;
+import models.DataMapModel;
 import datastructures.SubMap;
 import datastructures.dataholders.Data;
 import datastructures.input.DataMap;
@@ -48,7 +48,7 @@ public class KFoldValidator<F extends Data<F>, V> implements
     }
 
     @Override
-    public final double validate(final Model<F, V> model,
+    public final double validate(final DataMapModel<F, V> model,
             final DataMap<F> features, final DataMap<V> labels) {
         if (features.size() != labels.size()) {
             throw new IllegalArgumentException(

@@ -1,6 +1,6 @@
 package models.singular;
 
-import models.Model;
+import models.DataMapModel;
 import predictors.Predictor;
 import datastructures.dataholders.Data;
 import datastructures.input.DataMap;
@@ -16,7 +16,7 @@ import datastructures.input.DataMap;
  *            The value to predict to.
  */
 public abstract class SingularModel<P extends Predictor<F, V>, F extends Data<F>, V>
-implements Model<F, V> {
+implements DataMapModel<F, V> {
 
     /**
      * The predictor.

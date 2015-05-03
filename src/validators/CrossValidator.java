@@ -1,6 +1,6 @@
 package validators;
 
-import models.Model;
+import models.DataMapModel;
 import datastructures.dataholders.Data;
 import datastructures.input.DataMap;
 
@@ -27,6 +27,6 @@ public interface CrossValidator<F extends Data<F>, V> {
      *            - The correct output for each feature
      * @return The error measure that results from the validation.
      */
-    double validate(Model<F, V> model, DataMap<F> features, DataMap<V> output);
+    double validate(DataMapModel<F, V> model, DataMap<F> features, DataMap<V> output);
 
 }
